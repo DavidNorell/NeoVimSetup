@@ -1,6 +1,6 @@
 " Plugins {{{
 let g:ale_completion_enabled = 0
-call plug#begin('~/.config/nvim')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'altercation/vim-colors-solarized'
@@ -45,6 +45,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tversteeg/registers.nvim'
 Plug 'vim-test/vim-test'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 " }}}
@@ -62,6 +63,7 @@ let mapleader = " "                       " space as leader
 nnoremap <leader>ev :vsp    $MYVIMRC<cr>  " open init.vim in split
 nnoremap <leader>sv :source $MYVIMRC<cr>  " source init.vim
 nnoremap <leader>D :b#<bar>bd#<cr>
+nnoremap <leader>o :LspClangdSwitchSourceHeader<cr>
 
 noremap <leader>f :Telescope git_files<CR>
 noremap <leader>F :Telescope find_files<CR>
@@ -70,6 +72,7 @@ noremap <leader>b :Telescope buffers<CR>
 noremap <leader>gg :Telescope live_grep<CR>
 noremap <leader>j :cnext<CR>
 noremap <leader>k :cprev<CR>
+
 
 " noremap <leader>tf :NvimTreeFindFile<CR>
 " noremap <leader>tt :NvimTreeFindFileToggle<CR>
@@ -87,7 +90,7 @@ vim.lsp.config('clangd', {
     "clangd",
     "--background-index",
     "--clang-tidy",
-    "--query-driver=/Users/gustav/.espressif/tools/**/*-g++,/Users/gustav/.espressif/tools/**/*-gcc",
+    "--query-driver=/Users/davidnorell/.espressif/tools/**/*-g++,/Users/davidnorell/.espressif/tools/**/*-gcc",
   }
 })
 vim.lsp.config('rust_analyzer', {})
@@ -282,8 +285,8 @@ set virtualedit=block   " Enable to move cursor on places without characters in 
 " }}}
 
 " Spaces and Tabs {{{
-set tabstop=4           " number of visual spaces per TAB
-set softtabstop=4       " number of spaces in tab when editing
+set tabstop=2           " number of visual spaces per TAB
+set softtabstop=2       " number of spaces in tab when editing
 set expandtab           " tabs are spaces
 " }}}
 
